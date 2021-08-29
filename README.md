@@ -37,7 +37,7 @@ Some example data is available now. The whole dataset will be released soon.
 <br>
 
 ## Quick start
-### Initialize
+### Initialization
 ```
 cd codes
 ```
