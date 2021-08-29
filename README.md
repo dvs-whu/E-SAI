@@ -19,7 +19,7 @@ Wuhan University
 - torchvision 0.7.0
 - python-opencv 4.4.0
 - NVIDIA GPU + CUDA
-- numpy, argparse
+- numpy, argparse, matplotlib
 - [sewar](https://github.com/andrewekhalel/sewar), [lpips](https://github.com/richzhang/PerceptualSimilarity) (for evaluation, optional)
 
 ## Download model and data
