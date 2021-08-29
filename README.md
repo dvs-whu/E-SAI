@@ -71,7 +71,7 @@ python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./Pr
 ```
 python Evaluation.py
 ```
-This code will create a IQA.txt file containing the quantitative results in './Results/IQA.txt'.
+This code will create an IQA.txt file containing the quantitative results in './Results/IQA.txt'.
 
 
 ## Citation
