@@ -1,9 +1,8 @@
 # E-SAI
-### [Official Website for Event-based Synthetic Aperture Imaging.](https://dvs-whu.cn/projects/esai/) 
+### [Official Website](https://dvs-whu.cn/projects/esai/) for Event-based Synthetic Aperture Imaging.
 
 Our CVPR paper can be found here:
-<br>
-[**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://arxiv.org/abs/2103.02376)
+###[**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://arxiv.org/abs/2103.02376)
 <br>
 Xiang Zhang*, Wei Liao*, Lei Yu&dagger;, Wen Yang, Gui-Song Xia 
 <br>
@@ -20,7 +19,7 @@ Wuhan University
 - python-opencv 4.4.0
 - NVIDIA GPU + CUDA
 - numpy, argparse
-- sewar, lpips (for evaluation, optional)
+- [sewar](https://github.com/andrewekhalel/sewar), [lpips](https://github.com/richzhang/PerceptualSimilarity) (for evaluation, optional)
 
 ## Download model and data
 ### Pretrained Model
