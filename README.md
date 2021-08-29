@@ -26,14 +26,14 @@ Wuhan University
 ### Pretrained Model
 Pretrained model can be downloaded via Baidu Net Disk. 
 <br>
-[**HybridNet and RefocusNet**](https://pan.baidu.com/s/1_4aIuVq1TwMgF79F8XMZ2Q) (Password: urbg)
+[**HybridNet and RefocusNet**](https://pan.baidu.com/s/1iqBrwwgf2bE_ztimJhWjmA) (Password: u8a4)
 <br>
 Note that the network structure is slightly different from the model in CVPR paper.
 
 ### Data
 Some example data is available now. The whole dataset will be released soon.
 <br>
-[**ExampleData**](https://pan.baidu.com/s/1O4KVdsV3pvqnIQNj9hQQkg) (Password: m2uv)
+[**ExampleData**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm)
 <br>
 
 ## Quick start
