@@ -1,8 +1,8 @@
 # E-SAI
-Official Website for Event-based Synthetic Aperture Imaging.
-### [Project Page](https://dvs-whu.cn/projects/esai/) 
+### [Official Website for Event-based Synthetic Aperture Imaging.](https://dvs-whu.cn/projects/esai/) 
 
-Our CVPR version:
+Our CVPR paper can be found here:
+<br>
 [**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://arxiv.org/abs/2103.02376)
 <br>
 Xiang Zhang*, Wei Liao*, Lei Yu&dagger;, Wen Yang, Gui-Song Xia 
