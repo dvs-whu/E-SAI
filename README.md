@@ -48,20 +48,20 @@ mkdir -p PreTraining Results Example_data/{Raw,Processed}
 - Copy the pretrained model to directory './PreTraining/'
 - Copy the data to directory './Example_data/Raw/'
 ### Run E-SAI+Hybrid (M)
-- Preprocessing event data with manual refocusing
+- Preprocess event data with manual refocusing
 ```
 python Preprocess.py --do_event_refocus=1 --input_event_path=./Example_data/Raw/Event/ --input_aps_path=./Example_data/Raw/APS/
 ```
-- Reconstruction (only apply HybridNet)
+- Run reconstruction (using only HybridNet)
 ```
 python Test_ManualRefocus.py --model=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 ### Run E-SAI+Hybrid (A)
-- Preprocessing event data without refocusing
+- Preprocess event data without refocusing
 ```
 python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/Event/ --input_aps_path=./Example_data/Raw/APS/
 ```
-- Reconstruction (apply HybridNet and RefocusNet)
+- Run reconstruction (using HybridNet and RefocusNet)
 ```
 python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
