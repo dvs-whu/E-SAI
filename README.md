@@ -3,7 +3,7 @@
 
 Our CVPR'21 paper can be found here:
 <br>
-[**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://arxiv.org/abs/2103.02376)
+[**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Event-Based_Synthetic_Aperture_Imaging_With_a_Hybrid_Network_CVPR_2021_paper.html)
 <br>
 Xiang Zhang*, Wei Liao*, Lei Yu&dagger;, Wen Yang, Gui-Song Xia 
 <br>
