@@ -1,7 +1,7 @@
 # E-SAI
 ### [Official Website](https://dvs-whu.cn/projects/esai/) for Event-based Synthetic Aperture Imaging.
 
-Our CVPR paper can be found here:
+Our CVPR'21 paper can be found here:
 <br>
 [**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://arxiv.org/abs/2103.02376)
 <br>
