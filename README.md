@@ -28,7 +28,7 @@ Pretrained model can be downloaded via Baidu Net Disk.
 <br>
 [**HybridNet and RefocusNet**](https://pan.baidu.com/s/1iqBrwwgf2bE_ztimJhWjmA) (Password: u8a4)
 <br>
-Note that the network structure is slightly different from the model in CVPR paper.
+Note that the network structure is slightly different from the model in our CVPR paper.
 
 ### Data
 Some example data is available now. The whole dataset will be released soon.
