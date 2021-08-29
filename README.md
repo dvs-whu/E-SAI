@@ -63,7 +63,7 @@ python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/
 ```
 - Run reconstruction (using HybridNet and RefocusNet)
 ```
-python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
+python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 ### Evaluation
 - Copy the ground truth images to directory './Results/True/'
