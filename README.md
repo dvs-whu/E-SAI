@@ -54,7 +54,7 @@ python Preprocess.py --do_event_refocus=1 --input_event_path=./Example_data/Raw/
 ```
 - Run reconstruction (using only HybridNet)
 ```
-python Test_ManualRefocus.py --model=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
+python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 ### Run E-SAI+Hybrid (A)
 - Preprocess event data without refocusing
@@ -63,7 +63,7 @@ python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/
 ```
 - Run reconstruction (using HybridNet and RefocusNet)
 ```
-python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input=./Example_data/Processed/Event/ --save="./Results/Test/"
+python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --inpu_patht=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 ### Run evaluation
 - Copy the ground truth images to directory './Results/True/'
