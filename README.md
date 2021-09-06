@@ -1,17 +1,15 @@
 # E-SAI
-### [Official Website](https://dvs-whu.cn/projects/esai/) for Event-based Synthetic Aperture Imaging.
+### [Official Website](https://dvs-whu.cn/projects/esai/) for Learning to See Through with Events.
 
-Our CVPR'21 paper can be found here:
-<br>
-[**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Event-Based_Synthetic_Aperture_Imaging_With_a_Hybrid_Network_CVPR_2021_paper.html)
-<br>
-Xiang Zhang*, Wei Liao*, Lei Yu&dagger;, Wen Yang, Gui-Song Xia 
-<br>
-Wuhan University
-<br>
-(* Equal Contribution &dagger; Corresponding Author)
+Although synthetic aperture imaging (SAI) can achieve the seeing-through effect by blurring out off-focus foreground occlusions while recovering in-focus occluded scenes from multi-view images, its performance is often deteriorated by very dense occlusions and extreme lighting conditions. To address the problem, this paper presents an Event-based SAI (E-SAI) method by relying on the asynchronous events with extremely low latency and high dynamic range acquired by an event camera. 
+Specifically, the collected events are first refocused by a Refocus-Net module through aligning in-focus events while scattering out off-focus ones. Following that, a hybrid network composed of spiking neural networks (SNNs) and convolutional neural networks (CNNs) is proposed to encode the spatio-temporal information from the refocused events and reconstruct a visual image of the occluded targets.
 
 <img src="img/pipeline.png" height="200">
+
+Exhaustive experiments demonstrate that our proposed E-SAI method can achieve remarkable performance in dealing with very dense occlusions and extreme lighting conditions and produce high-quality images from pure event data.
+
+Previous version has been published in CVPR'21 [**Event-based Synthetic Aperture Imaging with a Hybrid Network**](https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Event-Based_Synthetic_Aperture_Imaging_With_a_Hybrid_Network_CVPR_2021_paper.html), which is selected as one of the Best Paper Candidates.
+
 
 ## Environment setup
 - Python 3.6
