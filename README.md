@@ -45,7 +45,7 @@ mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
 - Copy the pretrained model to directory './PreTraining/'
 - Copy the data to directory './Example_data/Raw/'
-###
+
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
 - Preprocess event data with manual refocusing
@@ -57,7 +57,7 @@ python Preprocess.py --do_event_refocus=1 --input_event_path=./Example_data/Raw/
 python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 The reconstruction results will be saved at save_path (default: './Results/Test/')
-###
+
 ### E-SAI+Hybrid (A)
 Run E-SAI+Hybrid with auto refocusing module.
 - Preprocess event data without refocusing
@@ -69,7 +69,7 @@ python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/
 python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
 The reconstruction results will be saved at save_path (default: './Results/Test/')
-###
+
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
 - Copy the ground truth images to directory './Results/True/'
