@@ -15,7 +15,7 @@ Previous version has been published in CVPR'21 [**Event-based Synthetic Aperture
 - Python 3.6
 - Pytorch 1.6.0
 - torchvision 0.7.0
-- opencv- 4.4.0
+- opencv-python 4.4.0
 - NVIDIA GPU + CUDA
 - numpy, argparse, matplotlib
 - [sewar](https://github.com/andrewekhalel/sewar), [lpips](https://github.com/richzhang/PerceptualSimilarity) (for evaluation, optional)
