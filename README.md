@@ -56,7 +56,7 @@ python Preprocess.py --do_event_refocus=1 --input_event_path=./Example_data/Raw/
 ```
 python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
-The reconstruction results will be saved at save_path (default: './Results/Test/')
+The reconstruction results will be saved at save_path (default: './Results/Test/').
 
 ### E-SAI+Hybrid (A)
 Run E-SAI+Hybrid with auto refocusing module.
@@ -68,7 +68,8 @@ python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/
 ```
 python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
 ```
-The reconstruction results will be saved at save_path (default: './Results/Test/'). This code will also calculate the Max Pixel Shift Error (MPSE) and save the result in './Results/Test/MPSE.txt'.
+The reconstruction results will be saved at save_path (default: './Results/Test/'). 
+This code will also calculate the Max Pixel Shift Error (MPSE) and save the result in './Results/Test/MPSE.txt'.
 
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
