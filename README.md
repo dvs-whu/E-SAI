@@ -55,7 +55,7 @@ cd codes
 mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
 - Copy the pretrained model to directory './PreTraining/'
-- Copy the event data and the corresponding APS images to directory './Example_data/Raw/Event/' and  './Example_data/Raw/APS/'
+- Copy the event data and the corresponding occlusion-free APS images to directory './Example_data/Raw/Event/' and  './Example_data/Raw/APS/'
 
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
@@ -85,7 +85,7 @@ This code will also calculate the Max Pixel Shift Error (MPSE) and save the resu
 
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
-- Copy the ground truth images in './Example_data/Raw/APS/' to directory './Results/True/'
+- Copy the occlusion-free APS images in './Example_data/Raw/APS/' to directory './Results/True/'
 - Run evaluation
 ```
 python Evaluation.py
