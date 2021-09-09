@@ -55,7 +55,7 @@ cd codes
 mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
 - Copy the pretrained model to directory './PreTraining/'
-- Copy the event data and the corresponding APS image to directory './Example_data/Raw/Event/' and  './Example_data/Raw/APS/'
+- Copy the event data and the corresponding APS images to directory './Example_data/Raw/Event/' and  './Example_data/Raw/APS/'
 
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
