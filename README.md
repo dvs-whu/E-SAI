@@ -43,8 +43,8 @@ cd codes
 ```
 mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
-- Copy the pretrained model to directory './codes/PreTraining/'
-- Copy the data to directory './codes/Example_data/Raw/'
+- Copy the pretrained model to directory './PreTraining/'
+- Copy the data to directory './Example_data/Raw/'
 
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
