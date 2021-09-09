@@ -25,6 +25,7 @@ You can create a new [Anaconda](https://www.anaconda.com/products/individual) en
 (Make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision)
 ```
 conda create -n esai python=3.6
+conda activate esai
 pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r requirements.txt
 ```
@@ -46,7 +47,6 @@ Some example data is available now. The whole dataset will be released soon.
 ## Quick start
 ### Initialization
 ```
-conda activate esai
 cd codes
 ```
 - Create directories
