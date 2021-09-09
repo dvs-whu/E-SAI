@@ -46,6 +46,7 @@ Some example data is available now. The whole dataset will be released soon.
 ## Quick start
 ### Initialization
 ```
+conda activate esai
 cd codes
 ```
 - Create directories
