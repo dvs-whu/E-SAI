@@ -22,7 +22,7 @@ Previous version has been published in CVPR'21 [**Event-based Synthetic Aperture
 
 You can create a new [Anaconda](https://www.anaconda.com/products/individual) environment with the above dependencies as follows.
 <br>
-(please make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision)
+Please make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision.
 ```
 conda create -n esai python=3.6
 conda activate esai
