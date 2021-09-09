@@ -1,0 +1,4 @@
+sewar==0.4.4
+numpy==1.19.5
+opencv_python==4.5.3.56
+lpips==0.1.4
