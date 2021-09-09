@@ -19,6 +19,14 @@ Previous version has been published in CVPR'21 [**Event-based Synthetic Aperture
 - NVIDIA GPU + CUDA
 - numpy, argparse, matplotlib
 - [sewar](https://github.com/andrewekhalel/sewar), [lpips](https://github.com/richzhang/PerceptualSimilarity) (for evaluation, optional)
+<br>
+You can create a new [Anaconda](https://www.anaconda.com/products/individual) environment with the required dependencies as follows.
+(Make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision)
+```
+conda create -n esai python=3.6
+pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+pip install -r requirements.txt
+```
 
 ## Download model and data
 ### Pretrained Model
