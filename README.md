@@ -20,9 +20,9 @@ Previous version has been published in CVPR'21 [**Event-based Synthetic Aperture
 - numpy, argparse, matplotlib
 - [sewar](https://github.com/andrewekhalel/sewar), [lpips](https://github.com/richzhang/PerceptualSimilarity) (for evaluation, optional)
 
-You can create a new [Anaconda](https://www.anaconda.com/products/individual) environment with the required dependencies as follows.
+You can create a new [Anaconda](https://www.anaconda.com/products/individual) environment with the above dependencies as follows.
 <br>
-(Make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision)
+(please make sure to adapt the CUDA toolkit version according to your setup when installing torch and torchvision)
 ```
 conda create -n esai python=3.6
 conda activate esai
