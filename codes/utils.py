@@ -6,6 +6,8 @@ from torch.nn import functional as F
 def get_file_name(path,suffix):
     """
     This function is used to get file name with specific suffix
+    
+    Parameters:
         path: path of the parent directory
         suffix: specific suffix (in the form like '.png')
     """
@@ -17,9 +19,34 @@ def get_file_name(path,suffix):
     name_list.sort()
     return name_list
 
+def filter_events_by_key(key, x1, x2, x3, start, end): 
+    """
+    This function is used to filter events by the key dimension (start inclusive and end exclusive)
+    e.g., new_x,new_y,new_t,new_p = filter_events_by_key(x, y, t, p, start=0, end=128) 
+    returns the filted events with 0 <= x < 128
+    
+    Parameters:
+        key: path of the parent directory
+        suffix: specific suffix (in the form like '.png')
+    """
+    new_x1 = x1[key>=start]
+    new_x2 = x2[key>=start]
+    new_x3 = x3[key>=start]
+    new_key = key[key>=start]
+    
+    new_x1 = new_x1[new_key<end]
+    new_x2 = new_x2[new_key<end]
+    new_x3 = new_x3[new_key<end]
+    new_key = new_key[new_key<end]
+
+    return new_key,new_x1,new_x2,new_x3
+
+
 def crop(data, roiTL=(2,45), size=(256,256)):
     """
     This function is used to crop the region of interest (roi) from event frames or aps images
+    
+    Parameters:
         data: input data (either event frames or aps images)
         roiTL: coordinate of the top-left pixel in roi
         size: expected size of roi
@@ -37,6 +64,8 @@ def crop(data, roiTL=(2,45), size=(256,256)):
 def refocus(data, psi, diff_t):
     """
     This function is used to refocus events with the predicted parameter psi
+    
+    Parameters:
         data: input unfocused event frames
         psi: refocusing parameter predicted by RefocusNet
         diff_t: time difference between the timestamps of event frames and the reference time
@@ -59,6 +88,8 @@ def refocus(data, psi, diff_t):
 def calculate_MPSE(psi, diff_t, depth, width=346, v=0.177, fx=320.132621):
     """
     This function is used to calculate MPSE in the horizontal direction
+    
+    Parameters:
         psi: refocusing parameter predicted by RefocusNet
         diff_t: time difference between the timestamps of event frames and the reference time
         depth: ground truth depth 
