@@ -85,7 +85,7 @@ This code will also calculate the Max Pixel Shift Error (MPSE) and save the resu
 
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
-- Copy the ground truth images to directory './Results/True/'
+- Copy the ground truth images in './Example_data/Raw/APS/' to directory './Results/True/'
 - Run evaluation
 ```
 python Evaluation.py
