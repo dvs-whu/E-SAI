@@ -43,6 +43,8 @@ Some example data is available now. The whole dataset will be released soon.
 <br>
 [**ExampleData**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm)
 <br>
+You can also download them via [**Google Drive**](https://drive.google.com/drive/folders/10TOO9US1zkABXIqtvZRXWJU7Y4HBp6nB?usp=sharing, https://drive.google.com/drive/folders/1_cNicsiyGy9EsqeuCNXLp3zxh-vubEgC?usp=sharing).
+<br>
 
 ## Quick start
 ### Initialization
