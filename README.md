@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ### Pretrained Model
 Pretrained model can be downloaded via Baidu Net Disk. 
 <br>
-[**HybridNet and RefocusNet**](https://pan.baidu.com/s/1iqBrwwgf2bE_ztimJhWjmA) (Password: u8a4)
+HybridNet and RefocusNet: [**Baidu Net Disk**](https://pan.baidu.com/s/1iqBrwwgf2bE_ztimJhWjmA) (Password: u8a4)
 <br>
 Note that the network structure is slightly different from the model in our CVPR paper.
 
