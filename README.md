@@ -39,12 +39,15 @@ Pretrained model can be downloaded via Baidu Net Disk.
 Note that the network structure is slightly different from the model in our CVPR paper.
 
 ### Data
-Some example data is available now. The whole dataset will be released soon.
+Some example data is available. 
 <br>
 [**ExampleData**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm)
 <br>
 You can also download them via [Google Drive](https://drive.google.com/drive/folders/1kHBANtcQDi7GyBWyykvgFKjTGH36V1-O?usp=sharing).
 <br>
+The whole dataset is now released, which is included in the [EF-SAI](https://github.com/smjsc/EF-SAI) project.
+<br>
+You can download them via [One Drive](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518).
 
 
 ## Quick start
