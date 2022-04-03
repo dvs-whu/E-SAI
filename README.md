@@ -44,7 +44,7 @@ Some example data is available.
 Example Data: [**Baidu Net Disk**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm) or [**Google Drive**](https://drive.google.com/drive/folders/1kHBANtcQDi7GyBWyykvgFKjTGH36V1-O?usp=sharing).
 <br>
 ### E-SAI Dataset
-The E-SAI dataset is now released, which is included in the [EF-SAI](https://github.com/smjsc/EF-SAI) project.
+The E-SAI dataset is now released, which is included in the [**EF-SAI**](https://github.com/smjsc/EF-SAI) project.
 <br>
 E-SAI Dataset: [**One Drive**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518).
 
