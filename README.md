@@ -39,14 +39,11 @@ HybridNet and RefocusNet: [**Baidu Net Disk**](https://pan.baidu.com/s/1iqBrwwgf
 Note that the network structure is slightly different from the model in our CVPR paper.
 
 ### Example Data
-Some example data is available. 
+Some example data is available. The whole dataset will be released soon. 
 <br>
 Example Data: [**Baidu Net Disk**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm) or [**Google Drive**](https://drive.google.com/drive/folders/1kHBANtcQDi7GyBWyykvgFKjTGH36V1-O?usp=sharing).
 <br>
-### E-SAI Dataset
-The E-SAI dataset is now released, which is included in the [**EF-SAI**](https://github.com/smjsc/EF-SAI) project.
-<br>
-E-SAI Dataset: [**One Drive**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518).
+You can also check out our [**EF-SAI**](https://github.com/smjsc/EF-SAI) dataset [**here**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518).
 
 
 ## Quick start
