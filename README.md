@@ -30,23 +30,23 @@ pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pyto
 pip install -r requirements.txt
 ```
 
-## Download model and data
-### Pretrained Model
-Pretrained model can be downloaded via Baidu Net Disk. 
-<br>
-HybridNet and RefocusNet: [**Baidu Net Disk**](https://pan.baidu.com/s/1iqBrwwgf2bE_ztimJhWjmA) (Password: u8a4)
-<br>
-Note that the network structure is slightly different from the model in our CVPR paper.
+## SAI dataset
+We construct a new SAI dataset containing 588 pairs of data in both indoor and outdoor environments. We install the DAVIS346 camera on a programmable sliding trail and employ a dense wooden fence to imitate the densely occluded scenes. When the camera moves linearly on the sliding trail, the triggered events can be collected from different viewpoints, and the occluded frames are captured simultaneously by the DAVIS346 camera. For each pair of data, an occlusion-free frame is also provided as ground truth image.
 
-### Example Data
-Some example data is available. The whole dataset will be released soon. 
-<br>
-Example Data: [**Baidu Net Disk**](https://pan.baidu.com/s/1AC0KjsMdWNznXzwhE4MVdg) (Password: dklm) or [**Google Drive**](https://drive.google.com/drive/folders/1kHBANtcQDi7GyBWyykvgFKjTGH36V1-O?usp=sharing).
-<br>
-You can also check out our [**EF-SAI**](https://github.com/smjsc/EF-SAI) dataset via [**One Drive**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518) or [**Baidu Net Disk**](https://pan.baidu.com/s/1VKbt0hoh44Ax7QX4sblBKQ?pwd=3tgv#list/path=%2F).
+<div align=center> <img src="img/scene.jpg" height="300"> </div>
 
+All the data are released as python (npy) files, and each pair of data contains the following information:
+
+<div align=center> <img src="img/data_format.png" height="300"> </div>
+
+Feel free to download our [**SAI dataset**](https://drive.google.com/drive/folders/1JVA06QYaQwG88BcAIJwjUGjyItR_UDjC?usp=sharing) (3.46 G). You are also welcome to check out our [**EF-SAI**](https://github.com/smjsc/EF-SAI) dataset via [**One Drive**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518) or [**Baidu Net Disk**](https://pan.baidu.com/s/1VKbt0hoh44Ax7QX4sblBKQ?pwd=3tgv#list/path=%2F).
 
 ## Quick start
+### Download model and data
+Pretrained model can be downloaded via [**Google Drive**](https://drive.google.com/drive/folders/10TOO9US1zkABXIqtvZRXWJU7Y4HBp6nB?usp=sharing). Note that the network structure is slightly different from the model in our CVPR paper.
+<br>
+We provide some [**example data**](https://drive.google.com/drive/folders/1_cNicsiyGy9EsqeuCNXLp3zxh-vubEgC?usp=sharing) from the SAI dataset here for quick start.
+
 ### Initialization
 Change the parent directory to './codes/'
 ```
@@ -57,43 +57,72 @@ cd codes
 mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
 - Copy the pretrained model to directory './PreTraining/'
-- Copy the event data and the corresponding occlusion-free APS images to directories './Example_data/Raw/Event/' and  './Example_data/Raw/APS/'
+- Copy the example data to directories './Example_data/Raw/'
 
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
 - Preprocess event data with manual refocusing
 ```
-python Preprocess.py --do_event_refocus=1 --input_event_path=./Example_data/Raw/Event/ --input_aps_path=./Example_data/Raw/APS/
+python Preprocess.py --do_event_refocus=1 --input_path=./Example_data/Raw/ --save_path=./Example_data/Processed-M/
 ```
 - Run reconstruction (using only HybridNet)
 ```
-python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
+python Test_ManualRefocus.py --reconNet=./PreTraining/Hybrid.pth --input_path=./Example_data/Processed-M/ --save_path=./Results-M/
 ```
-The reconstruction results will be saved at save_path (default: './Results/Test/').
+The reconstruction results will be saved at save_path (default: './Results-M/').
 
 ### E-SAI+Hybrid (A)
 Run E-SAI+Hybrid with auto refocusing module.
 - Preprocess event data without refocusing
 ```
-python Preprocess.py --do_event_refocus=0 --input_event_path=./Example_data/Raw/Event/ --input_aps_path=./Example_data/Raw/APS/
+python Preprocess.py --do_event_refocus=0 --input_path=./Example_data/Raw/ --save_path=./Example_data/Processed-A/
 ```
 - Run reconstruction (using HybridNet and RefocusNet)
 ```
-python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed/Event/ --save_path="./Results/Test/"
+python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./PreTraining/RefocusNet.pth --input_path=./Example_data/Processed-A/ --save_path=./Results-A/
 ```
-The reconstruction results will be saved at save_path (default: './Results/Test/'). 
+The reconstruction results will be saved at save_path (default: './Results-A/'). 
 <br>
-This code will also calculate the Max Pixel Shift Error (MPSE) and save the result in './Results/Test/MPSE.txt'.
+This code will also calculate the Average Pixel Shift Error (APSE) and save the result in './Results-A/APSE.txt'.
 
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
-- Copy the occlusion-free APS images in './Example_data/Raw/APS/' to directory './Results/True/'
-- Run evaluation
+- If you want to evaluate the results on the particular data such as E-SAI+Hybrid (M) results on the example data, run evaluation
 ```
-python Evaluation.py
+python Evaluation.py --input_path=./Results-M/
 ```
-This code will create an IQA.txt file containing the quantitative results in './Results/IQA.txt'.
-
+This code will create an IQA.txt file containing the quantitative results in './Results-M/IQA.txt'.
+- If you want to evaluate on the whole SAI dataset, please arrange the results as follows
+```
+<project root>
+  |-- Results
+  |     |-- Indoor
+  |     |     |-- Object 
+  |     |     |-- Portrait
+  |     |     |-- Picture
+  |     |-- Outdoor
+  |     |     |-- Scene
+```
+Under each category folder, please put the reconstruction results and the corresponding gt images in 'Test' and 'True' directories, respectively. For example,
+```
+<project root>
+  |-- Results
+  |     |-- Outdoor
+  |     |     |-- Scene
+  |     |     |     |-- Test
+  |     |     |     |     |-- 000000.png
+  |     |     |     |     |-- 000001.png
+  |     |     |     |     |-- ...
+  |     |     |     |-- True
+  |     |     |     |     |-- 000000.png
+  |     |     |     |     |-- 000001.png
+  |     |     |     |     |-- ...
+```
+Then run 
+```
+python Evaluation_SAIDataset.py --indoor_path=./Results/Indoor/ --outdoor_path=./Results/Outdoor/
+```
+The quantitative results will be printed in terminal and recorded in IQA.txt file. Note that we use center cropped 256x256 images for evaluation in our paper.
 
 ## Citation
 
