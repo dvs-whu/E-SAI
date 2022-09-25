@@ -54,7 +54,7 @@ cd codes
 ```
 - Create directories
 ```
-mkdir -p PreTraining Results Example_data/Raw
+mkdir -p PreTraining Example_data/Raw
 ```
 - Copy the pretrained model to directory './PreTraining/'
 - Copy the example data to directory './Example_data/Raw/'
