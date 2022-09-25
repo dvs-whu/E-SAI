@@ -1,8 +1,8 @@
-from torch.utils.data import Dataset
+import os 
 import torch
 import numpy as np
-import os 
 from utils import get_file_name
+from torch.utils.data import Dataset
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -31,8 +31,11 @@ class TestSet_ManualRefocus(Dataset):
         pos = torch.FloatTensor(np.expand_dims(pos,axis=1))
         neg = torch.FloatTensor(np.expand_dims(neg,axis=1))
         event_input = torch.cat((pos,neg), 1)
+        
+        # load occlusion-free image
+        occ_free_aps = event_data['occ_free_aps']
                 
-        return event_input
+        return event_input, occ_free_aps
 
 class TestSet_AutoRefocus(Dataset):
     """
@@ -59,11 +62,12 @@ class TestSet_AutoRefocus(Dataset):
         diff_t = torch.FloatTensor(np.array(event_data['index_t'] - event_data['ref_t']))
         fx = event_data['fx']
         depth = event_data['depth']
+        occ_free_aps = event_data['occ_free_aps']
         
         # cat positive and negative events
         pos = np.expand_dims(pos,axis=1)
         neg = np.expand_dims(neg,axis=1)
         event_input = torch.FloatTensor(np.concatenate((pos, neg), axis=1)) # size = (step, channel, H, W)
         
-        return event_input, diff_t, depth, fx
+        return event_input, diff_t, depth, fx, occ_free_aps
         

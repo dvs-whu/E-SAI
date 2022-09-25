@@ -3,6 +3,16 @@ import torch
 import numpy as np 
 from torch.nn import functional as F
 
+def mkdir(path):
+    """
+    This function is used to create directory
+    
+    Parameters:
+        path: path of the desired directory
+    """
+    if not os.path.exists(path):
+        os.makedirs(path)
+
 def get_file_name(path,suffix):
     """
     This function is used to get file name with specific suffix
@@ -53,7 +63,9 @@ def crop(data, roiTL=(2,45), size=(256,256)):
     """
     Xrange = (roiTL[1], roiTL[1] + size[1])
     Yrange = (roiTL[0], roiTL[0] + size[0])
-    if data.ndim == 3:
+    if data.ndim == 2:
+        out = data[Yrange[0]:Yrange[1], Xrange[0]:Xrange[1]]
+    elif data.ndim == 3:
         out = data[:, Yrange[0]:Yrange[1], Xrange[0]:Xrange[1]]
     elif data.ndim == 4:
         out = data[:,:, Yrange[0]:Yrange[1], Xrange[0]:Xrange[1]]
@@ -85,9 +97,9 @@ def refocus(data, psi, diff_t):
     
     return refocused_data
 
-def calculate_MPSE(psi, diff_t, depth, width=346, v=0.177, fx=320.132621):
+def calculate_APSE(psi, diff_t, depth, width=346, v=0.177, fx=320.132621):
     """
-    This function is used to calculate MPSE in the horizontal direction
+    This function is used to calculate APSE in the horizontal direction
     
     Parameters:
         psi: refocusing parameter predicted by RefocusNet
@@ -101,9 +113,9 @@ def calculate_MPSE(psi, diff_t, depth, width=346, v=0.177, fx=320.132621):
     psi_x = psi.squeeze()[0]
     pred_depth = (2*fx*v) / (-1*psi_x*width)
     
-    max_abs_diff_t = torch.max(torch.abs(diff_t))
-    max_pix_shift_real = max_abs_diff_t * fx * v / depth 
-    max_pix_shift_pred = max_abs_diff_t * fx * v / pred_depth
-    MPSE = np.abs(max_pix_shift_real - max_pix_shift_pred)
+    mean_abs_diff_t = torch.mean(torch.abs(diff_t))
+    mean_pix_shift_real = mean_abs_diff_t * fx * v / depth 
+    mean_pix_shift_pred = mean_abs_diff_t * fx * v / pred_depth
+    APSE = np.abs(mean_pix_shift_real - mean_pix_shift_pred)
     
-    return MPSE
+    return APSE
