@@ -31,13 +31,13 @@ pip install -r requirements.txt
 ```
 
 ## SAI dataset
-We construct a new SAI dataset containing 588 pairs of data in both indoor and outdoor environments. We install the DAVIS346 camera on a programmable sliding trail and employ a dense wooden fence to imitate the densely occluded scenes. When the camera moves linearly on the sliding trail, the triggered events can be collected from different viewpoints, and the occluded frames are captured simultaneously by the DAVIS346 camera. For each pair of data, an occlusion-free frame is also provided as ground truth image.
+We construct a new SAI dataset containing 588 pairs of data in both indoor and outdoor environments. We install the DAVIS346 camera on a programmable sliding trail and employ a wooden fence to imitate the densely occluded scenes. When the camera moves linearly on the sliding trail, the triggered events can be collected from different viewpoints, and the occluded frames are captured simultaneously by the DAVIS346 camera. For each pair of data, an occlusion-free frame is also provided as ground truth image.
 
-<div align=center> <img src="img/scene.jpg" height="300"> </div>
+<div align=center> <img src="img/scene.jpg" height="250"> </div>
 
 All the data are released as python (npy) files, and each pair of data contains the following information:
 
-<div align=center> <img src="img/data_format.png" height="300"> </div>
+<div align=center> <img src="img/data_format.png" height="200"> </div>
 
 Feel free to download our [**SAI dataset**](https://drive.google.com/drive/folders/1JVA06QYaQwG88BcAIJwjUGjyItR_UDjC?usp=sharing) (3.46 G). You are also welcome to check out our [**EF-SAI**](https://github.com/smjsc/EF-SAI) dataset via [**One Drive**](https://onedrive.live.com/?authkey=%21AMvAPOnuudsYx1I&id=7ABD0A750B262518%214850&cid=7ABD0A750B262518) or [**Baidu Net Disk**](https://pan.baidu.com/s/1VKbt0hoh44Ax7QX4sblBKQ?pwd=3tgv#list/path=%2F).
 
@@ -57,7 +57,7 @@ cd codes
 mkdir -p PreTraining Results Example_data/{Raw,Processed}
 ```
 - Copy the pretrained model to directory './PreTraining/'
-- Copy the example data to directories './Example_data/Raw/'
+- Copy the example data to directory './Example_data/Raw/'
 
 ### E-SAI+Hybrid (M)
 Run E-SAI+Hybrid with manual refocusing module.
@@ -122,7 +122,7 @@ Then run
 ```
 python Evaluation_SAIDataset.py --indoor_path=./Results/Indoor/ --outdoor_path=./Results/Outdoor/
 ```
-The quantitative results will be printed in terminal and recorded in IQA.txt file. Note that we use center cropped 256x256 images for evaluation in our paper.
+The quantitative results will be printed in terminal and recorded in IQA.txt files. Note that we use center cropped 256x256 images for evaluation in our paper.
 
 ## Citation
 
