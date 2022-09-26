@@ -83,11 +83,11 @@ python Test_AutoRefocus.py --reconNet=./PreTraining/Hybrid.pth --refocusNet=./Pr
 ```
 The reconstruction results will be saved at save_path (default: './Results-A/'). 
 <br>
-This code will also calculate the Average Pixel Shift Error (APSE) and save the result in './Results-A/APSE.txt'.
+This code will also compute the Average Pixel Shift Error (APSE) and save the result in './Results-A/APSE.txt'.
 
 ### Evaluation
 Evaluate the reconstruction results with metrics PSNR, SSIM and LPIPS.
-- If you want to evaluate the results on the particular data such as E-SAI+Hybrid (M) results on the example data, run evaluation
+- If you want to evaluate the results on some particular data such as the E-SAI+Hybrid (M) results of our example data, run evaluation
 ```
 python Evaluation.py --input_path=./Results-M/
 ```
