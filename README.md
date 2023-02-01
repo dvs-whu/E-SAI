@@ -137,7 +137,7 @@ If you find our work useful in your research, please cite:
 }
 ```
 ```
-@inproceedings{yu2022event,
+@inproceedings{yu2022learning,
   title={Learning to See Through with Events},
   author={Yu, Lei and Zhang, Xiang and Liao, Wei and Yang, Wen and Xia, Gui-Song},
   year={2022},
