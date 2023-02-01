@@ -1,5 +1,5 @@
 # E-SAI
-### [Official Website](https://dvs-whu.cn/projects/esai/) for Learning to See Through with Events.
+### [Official Website](https://dvs-whu.cn/projects/esai/) for [Learning to See Through with Events](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9973388).
 
 Although synthetic aperture imaging (SAI) can achieve the seeing-through effect by blurring out off-focus foreground occlusions while recovering in-focus occluded scenes from multi-view images, its performance is often deteriorated by very dense occlusions and extreme lighting conditions. To address the problem, this paper presents an Event-based SAI (E-SAI) method by relying on the asynchronous events with extremely low latency and high dynamic range acquired by an event camera. 
 Specifically, the collected events are first refocused by a Refocus-Net module through aligning in-focus events while scattering out off-focus ones. Following that, a hybrid network composed of spiking neural networks (SNNs) and convolutional neural networks (CNNs) is proposed to encode the spatio-temporal information from the refocused events and reconstruct a visual image of the occluded targets.
@@ -134,5 +134,13 @@ If you find our work useful in your research, please cite:
   author={Zhang, Xiang and Liao, Wei and Yu, Lei and Yang, Wen and Xia, Gui-Song},
   year={2021},
   booktitle={CVPR},
+}
+```
+```
+@inproceedings{yu2022event,
+  title={Learning to See Through with Events},
+  author={Yu, Lei and Zhang, Xiang and Liao, Wei and Yang, Wen and Xia, Gui-Song},
+  year={2022},
+  booktitle={IEEE TPAMI},
 }
 ```
